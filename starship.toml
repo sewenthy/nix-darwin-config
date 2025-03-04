@@ -1,0 +1,49 @@
+format = '''
+[┌─────────────────── $os││ ](green)($git_branch[││](blue) )($ocaml )($python )($nix_shell )
+[│](green) $username$hostname$directory
+[└─](green)$character[\$](bold white) '''
+
+right_format = '$cmd_duration'
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+[cmd_duration]
+min_time = 1000
+format = '[$duration]($style)'
+
+[fill]
+symbol = ' '
+
+[os]
+disabled = false
+
+[os.symbols]
+NixOS = "❄️ "
+Fedora = "🗡️ "
+Macos = "🔗 "
+Debian = "🏔️ "
+
+[time]
+disabled = false
+time_format = "%I:%M %p"
+format = '[$time]($style)'
+
+[username]
+format = '[$user]($style)'
+
+[hostname]
+ssh_symbol = ' 🌀'
+format = '[@$hostname$ssh_symbol:]($style)'
+
+[directory]
+style = 'fg:bright-green'
+
+[ocaml]
+format = '[$symbol($version )($switch_indicator$switch_name )]($style)'
+
+[python]
+format = '[${symbol}${version}( \($virtualenv\))]($style)'
