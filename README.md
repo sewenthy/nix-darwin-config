@@ -13,7 +13,7 @@ Then you need to edit:
 
 To switch to this configuration, run:
 ```bash
-sudo nix --experimental-features 'nix-command flakes' run darwin-rebuild -- switch --flake .#minimal # or whatever your hostname is
+sudo nix --experimental-features "nix-command flakes" run nix-darwin/master#darwin-rebuild -- switch --flake .#minimal # or whatever your hostname is
 ```
 
 After that, you can switch using darwin-rebuild:
