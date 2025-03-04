@@ -4,6 +4,9 @@ let
   uid = 501; # check by running `id`
 in {
 
+  nix.enable = true;
+  nix.gc = { automatic = true; };
+
   nix.settings.experimental-features = "nix-command flakes";
   environment.systemPackages = with pkgs; [
     kitty
